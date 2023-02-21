@@ -52,14 +52,14 @@ fun ComposeQuadrant() {
                 .fillMaxWidth(0.5f)
 
 
-
         ) {
-            Column(modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(0.5f)
-                .background(Color.Green)
-                .padding(all = 16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(0.5f)
+                    .background(Color.Green)
+                    .padding(all = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
 
@@ -75,13 +75,15 @@ fun ComposeQuadrant() {
                 )
             }
 
-            Column(modifier = Modifier
-                .background(Color.Cyan)
-                .fillMaxWidth()
-                .fillMaxHeight()
-                .padding(all = 16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center) {
+            Column(
+                modifier = Modifier
+                    .background(Color.Cyan)
+                    .fillMaxWidth()
+                    .fillMaxHeight()
+                    .padding(all = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
 
 
                 Text(
@@ -96,14 +98,58 @@ fun ComposeQuadrant() {
                 )
             }
         }
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(0.5f)
+                    .background(Color.Yellow)
+                    .padding(all = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+
+                Text(
+                    text = stringResource(id = R.string.image_composable_first),
+                    modifier = Modifier.padding(bottom = 16.dp),
+                    fontWeight = FontWeight.Bold
+                )
+
+                Text(
+                    text = stringResource(id = R.string.image_composable_second),
+                    textAlign = TextAlign.Justify
+                )
+            }
+
+            Column(
+                modifier = Modifier
+                    .background(Color.LightGray)
+                    .fillMaxWidth()
+                    .fillMaxHeight()
+                    .padding(all = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
 
 
+                Text(
+                    text = stringResource(id = R.string.column_composable_first),
+                    modifier = Modifier.padding(bottom = 16.dp),
+                    fontWeight = FontWeight.Bold
+                )
 
+                Text(
+                    text = stringResource(id = R.string.column_composable_second),
+                    textAlign = TextAlign.Justify
+                )
+            }
         }
-
     }
 
-
+}
 
 
 @Preview(showBackground = true)
