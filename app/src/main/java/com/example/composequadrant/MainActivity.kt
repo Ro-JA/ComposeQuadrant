@@ -44,53 +44,66 @@ fun ComposeQuadrantApp() {
 fun ComposeQuadrant() {
     Row(
         modifier = Modifier
-            .fillMaxWidth().fillMaxHeight(0.5f)
+            .fillMaxSize()
     ) {
         Column(
             modifier = Modifier
-                .padding(all = 16.dp).fillMaxHeight().fillMaxWidth(0.5f)
-                .background(Color.Green),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+                .fillMaxHeight()
+                .fillMaxWidth(0.5f)
+
 
 
         ) {
-            Text(
-                text = stringResource(id = R.string.column_composable_first),
-                modifier = Modifier.padding(bottom = 16.dp),
-                fontWeight = FontWeight.Bold
-            )
+            Column(modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(0.5f)
+                .background(Color.Green)
+                .padding(all = 16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
 
-            Text(
-                text = stringResource(id = R.string.text_composable_second),
-                textAlign = TextAlign.Justify
-            )
+                Text(
+                    text = stringResource(id = R.string.column_composable_first),
+                    modifier = Modifier.padding(bottom = 16.dp),
+                    fontWeight = FontWeight.Bold
+                )
+
+                Text(
+                    text = stringResource(id = R.string.text_composable_second),
+                    textAlign = TextAlign.Justify
+                )
+            }
+
+            Column(modifier = Modifier
+                .background(Color.Cyan)
+                .fillMaxWidth()
+                .fillMaxHeight()
+                .padding(all = 16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center) {
+
+
+                Text(
+                    text = stringResource(id = R.string.row_composable_first),
+                    modifier = Modifier.padding(bottom = 16.dp),
+                    fontWeight = FontWeight.Bold
+                )
+
+                Text(
+                    text = stringResource(id = R.string.row_composable_second),
+                    textAlign = TextAlign.Justify
+                )
+            }
         }
 
-        Column(
-            modifier = Modifier
-                .padding(all = 16.dp)
-                .fillMaxHeight()
-                .fillMaxWidth(0.5f),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
 
 
-            ) {
-            Text(
-                text = stringResource(id = R.string.image_composable_first),
-                modifier = Modifier.padding(bottom = 16.dp),
-                fontWeight = FontWeight.Bold
-            )
-
-            Text(
-                text = stringResource(id = R.string.image_composable_second),
-                textAlign = TextAlign.Justify
-            )
         }
 
     }
-}
+
+
 
 
 @Preview(showBackground = true)
